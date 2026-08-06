@@ -1,0 +1,35 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.page {
+  @include m.stack(v.$space-lg);
+
+  width: 100%;
+  max-width: v.$content-width;
+  margin: 0 auto;
+  padding: v.$space-xl v.$space-md;
+}
+
+.header {
+  @include m.stack(v.$space-xs);
+}
+
+.back {
+  align-self: flex-start;
+  font-size: v.$font-sm;
+  color: v.$color-text-muted;
+  text-decoration: none;
+
+  &:hover {
+    color: v.$color-text;
+  }
+}
+
+.title {
+  font-size: v.$font-xl;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: v.$color-text-muted;
+}

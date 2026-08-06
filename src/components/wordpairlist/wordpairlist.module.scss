@@ -1,0 +1,35 @@
+@use '../../styles/variables' as v;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-xs;
+  max-height: 260px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  gap: v.$space-sm;
+  padding: v.$space-xs v.$space-sm;
+  border-radius: v.$radius-sm;
+  background: v.$color-surface-muted;
+  font-size: v.$font-sm;
+  overflow-wrap: anywhere;
+}
+
+.original {
+  font-weight: 600;
+}
+
+.separator {
+  color: v.$color-text-muted;
+}
+
+.empty {
+  color: v.$color-text-muted;
+  font-size: v.$font-sm;
+}

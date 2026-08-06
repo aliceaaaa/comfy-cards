@@ -1,0 +1,29 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.progress {
+  @include m.stack(v.$space-xs);
+
+  width: 100%;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  font-size: v.$font-sm;
+  color: v.$color-text-muted;
+}
+
+.track {
+  height: 6px;
+  border-radius: 999px;
+  background: v.$color-surface-muted;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 999px;
+  background: v.$color-primary;
+  transition: width v.$transition;
+}

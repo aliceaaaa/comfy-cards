@@ -1,0 +1,32 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.segmented {
+  display: inline-flex;
+  padding: v.$space-xs;
+  gap: v.$space-xs;
+  background: v.$color-surface-muted;
+  border-radius: v.$radius-sm;
+}
+
+.option {
+  @include m.reset-button;
+  @include m.focus-ring;
+
+  padding: v.$space-xs v.$space-md;
+  border-radius: v.$radius-sm - 2px;
+  font-size: v.$font-sm;
+  font-weight: 600;
+  color: v.$color-text-muted;
+  transition: background v.$transition, color v.$transition;
+
+  &:hover {
+    color: v.$color-text;
+  }
+}
+
+.active {
+  background: v.$color-surface;
+  color: v.$color-text;
+  box-shadow: v.$shadow-sm;
+}

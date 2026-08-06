@@ -1,0 +1,17 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.field {
+  @include m.stack(v.$space-xs);
+}
+
+.label {
+  font-size: v.$font-sm;
+  font-weight: 600;
+  color: v.$color-text-muted;
+}
+
+.hint {
+  font-size: v.$font-sm;
+  color: v.$color-text-muted;
+}

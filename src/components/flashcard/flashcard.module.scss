@@ -1,0 +1,56 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.flashcard {
+  @include m.reset-button;
+  @include m.focus-ring;
+
+  width: 100%;
+  height: 260px;
+  perspective: 1200px;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s ease;
+  transform-style: preserve-3d;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.side {
+  @include m.surface;
+
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: v.$space-sm;
+  padding: v.$space-lg;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-md;
+  backface-visibility: hidden;
+  text-align: center;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: v.$color-surface-muted;
+}
+
+.word {
+  font-size: v.$font-xl;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.caption {
+  font-size: v.$font-sm;
+  color: v.$color-text-muted;
+}

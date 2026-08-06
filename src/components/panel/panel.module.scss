@@ -1,0 +1,15 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.panel {
+  @include m.surface;
+  @include m.stack(v.$space-md);
+
+  padding: v.$space-lg;
+  border-radius: v.$radius-lg;
+}
+
+.title {
+  font-size: v.$font-lg;
+  font-weight: 700;
+}

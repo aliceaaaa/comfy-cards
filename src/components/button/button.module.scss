@@ -1,0 +1,94 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.button {
+  @include m.reset-button;
+  @include m.focus-ring;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$space-sm;
+  padding: v.$space-sm v.$space-lg;
+  border: 1px solid transparent;
+  border-radius: v.$radius-sm;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: background v.$transition, border-color v.$transition, transform v.$transition;
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background: v.$color-primary;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background: v.$color-primary-dark;
+  }
+}
+
+.secondary {
+  background: v.$color-surface;
+  border-color: v.$color-border;
+  color: v.$color-text;
+
+  &:hover:not(:disabled) {
+    background: v.$color-surface-muted;
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: v.$color-text-muted;
+
+  &:hover:not(:disabled) {
+    color: v.$color-text;
+  }
+}
+
+.success {
+  background: v.$color-success;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background: v.$color-success-dark;
+  }
+}
+
+.danger {
+  background: v.$color-danger;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background: v.$color-danger-dark;
+  }
+}
+
+.sizeMd {
+  font-size: v.$font-md;
+}
+
+.sizeLg {
+  padding: v.$space-md v.$space-xl;
+  font-size: v.$font-lg;
+}
+
+.sizeCircle {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: v.$font-xl;
+}
+
+.fullWidth {
+  width: 100%;
+}

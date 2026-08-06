@@ -1,0 +1,51 @@
+@use 'variables' as v;
+
+@mixin reset-button {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid v.$color-primary;
+    outline-offset: 2px;
+  }
+}
+
+@mixin surface {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  box-shadow: v.$shadow-sm;
+}
+
+@mixin field {
+  width: 100%;
+  padding: v.$space-sm v.$space-md;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+  background: v.$color-surface;
+  color: v.$color-text;
+  font: inherit;
+  transition: border-color v.$transition, box-shadow v.$transition;
+
+  &::placeholder {
+    color: v.$color-text-muted;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-primary;
+    box-shadow: 0 0 0 3px rgba(91, 124, 250, 0.18);
+  }
+}
+
+@mixin stack($gap: v.$space-md) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
