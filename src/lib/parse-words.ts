@@ -1,12 +1,25 @@
 import { createId } from './id';
 import { Card } from '../types';
 
-/** Запятая, пробел, перевод строки и точка с запятой считаются одним и тем же разделителем. */
-const SEPARATORS = /[\s,;]+/;
+/**
+ * Разделитель выбирается по самому тексту, чтобы фразы вроде «der Hund» не рвались:
+ * есть запятая — режем по запятой (и по строкам), иначе по строкам, иначе по пробелам.
+ */
+function getSeparator(raw: string): RegExp {
+  if (raw.includes(',') || raw.includes(';')) {
+    return /[,;\n]+/;
+  }
+
+  if (raw.includes('\n')) {
+    return /\n+/;
+  }
+
+  return /\s+/;
+}
 
 export function parseWords(raw: string): string[] {
   return raw
-    .split(SEPARATORS)
+    .split(getSeparator(raw))
     .map((word) => {
       return word.trim();
     })

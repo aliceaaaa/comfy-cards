@@ -1,0 +1,28 @@
+@use '../../styles/variables' as v;
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: v.$space-md;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hint {
+  color: v.$color-text-muted;
+  font-size: v.$font-sm;
+}
+
+.warning {
+  color: v.$color-danger;
+  font-size: v.$font-sm;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$space-sm;
+}

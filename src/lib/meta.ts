@@ -1,0 +1,37 @@
+const BASE_TITLE = 'Comfy cards';
+
+const setMetaTag = (
+  attr: 'name' | 'property',
+  key: string,
+  content: string,
+) => {
+  let el = document.head.querySelector<HTMLMetaElement>(
+    `meta[${attr}="${key}"]`,
+  );
+
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+
+  el.setAttribute('content', content);
+};
+
+type DocumentMeta = {
+  title?: string;
+  description?: string;
+};
+
+export const setDocumentMeta = ({ title, description }: DocumentMeta) => {
+  const fullTitle =
+    !title || title === BASE_TITLE ? BASE_TITLE : `${title} · ${BASE_TITLE}`;
+
+  document.title = fullTitle;
+  setMetaTag('property', 'og:title', fullTitle);
+
+  if (description) {
+    setMetaTag('name', 'description', description);
+    setMetaTag('property', 'og:description', description);
+  }
+};

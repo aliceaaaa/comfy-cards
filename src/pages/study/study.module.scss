@@ -1,0 +1,28 @@
+@use '../../styles/variables' as v;
+
+.setting {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-sm;
+}
+
+.settingLabel {
+  color: v.$color-text-muted;
+  font-size: v.$font-sm;
+}
+
+.answers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$space-xl;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: v.$space-sm;
+}

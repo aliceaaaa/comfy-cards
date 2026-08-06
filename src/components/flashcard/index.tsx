@@ -5,9 +5,18 @@ interface FlashCardProps {
   back: string;
   flipped: boolean;
   onFlip: () => void;
+  frontCaption?: string;
+  backCaption?: string;
 }
 
-export function FlashCard({ front, back, flipped, onFlip }: FlashCardProps) {
+export const FlashCard = ({
+  front,
+  back,
+  flipped,
+  onFlip,
+  frontCaption = 'нажмите, чтобы перевернуть',
+  backCaption = 'перевод',
+}: FlashCardProps) => {
   const innerClassNames = [styles.inner];
 
   if (flipped) {
@@ -15,17 +24,22 @@ export function FlashCard({ front, back, flipped, onFlip }: FlashCardProps) {
   }
 
   return (
-    <button type="button" className={styles.flashcard} onClick={onFlip} aria-live="polite">
+    <button
+      type="button"
+      className={styles.flashcard}
+      onClick={onFlip}
+      aria-live="polite"
+    >
       <div className={innerClassNames.join(' ')}>
         <div className={styles.side}>
           <span className={styles.word}>{front}</span>
-          <span className={styles.caption}>нажмите, чтобы перевернуть</span>
+          <span className={styles.caption}>{frontCaption}</span>
         </div>
         <div className={`${styles.side} ${styles.back}`}>
           <span className={styles.word}>{back}</span>
-          <span className={styles.caption}>перевод</span>
+          <span className={styles.caption}>{backCaption}</span>
         </div>
       </div>
     </button>
   );
-}
+};

@@ -7,14 +7,14 @@ interface ProgressProps {
   caption?: ReactNode;
 }
 
-export function Progress({ value, max, caption }: ProgressProps) {
+export const Progress = ({ value, max, caption }: ProgressProps) => {
   const percent = max > 0 ? Math.min(100, (value / max) * 100) : 0;
 
   return (
     <div className={styles.progress}>
       <div className={styles.caption}>
         <span>
-          {value} из {max}
+          {value} / {max}
         </span>
         {caption ? <span>{caption}</span> : null}
       </div>
@@ -29,4 +29,4 @@ export function Progress({ value, max, caption }: ProgressProps) {
       </div>
     </div>
   );
-}
+};

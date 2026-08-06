@@ -16,14 +16,14 @@ const sizeClass: Record<ButtonSize, string> = {
   circle: styles.sizeCircle,
 };
 
-export function Button({
+export const Button = ({
   variant = 'primary',
   size = 'md',
   fullWidth = false,
   className,
   type = 'button',
   ...rest
-}: ButtonProps) {
+}: ButtonProps) => {
   const classNames = [styles.button, styles[variant], sizeClass[size]];
 
   if (fullWidth) {
@@ -35,4 +35,4 @@ export function Button({
   }
 
   return <button type={type} className={classNames.join(' ')} {...rest} />;
-}
+};

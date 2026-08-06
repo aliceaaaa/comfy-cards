@@ -1,0 +1,39 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.list {
+  @include m.stack(v.$space-md);
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: v.$space-sm;
+}
+
+.title {
+  font-size: v.$font-lg;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.count {
+  color: v.$color-text-muted;
+  font-size: v.$font-sm;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space-sm;
+}
+
+.empty {
+  color: v.$color-text-muted;
+}
