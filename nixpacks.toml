@@ -1,0 +1,6 @@
+# Railway по умолчанию ставит зависимости через `npm ci`, а он падает с EUSAGE,
+# если lock-файл собран другой версией npm и разошёлся с package.json.
+# Воспроизводимость лока для этого проекта не критична — ставим через install.
+# Версия Node берётся из .nvmrc: react-router 7 и sass требуют >= 20.19.
+[phases.install]
+cmds = ["npm install --no-audit --no-fund"]
