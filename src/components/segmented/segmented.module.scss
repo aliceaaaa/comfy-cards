@@ -7,6 +7,11 @@
   gap: v.$space-xs;
   background: v.$color-surface-muted;
   border-radius: v.$radius-sm;
+
+  @include m.mobile {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .option {
@@ -22,6 +27,12 @@
 
   &:hover {
     color: v.$color-text;
+  }
+
+  @include m.mobile {
+    flex: 1;
+    min-height: 40px;
+    font-size: v.$font-md;
   }
 }
 

@@ -1,4 +1,5 @@
 @use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
 
 .list {
   display: flex;
@@ -8,7 +9,12 @@
   margin: 0;
   padding: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   list-style: none;
+
+  @include m.mobile {
+    max-height: 220px;
+  }
 }
 
 .item {
@@ -19,6 +25,12 @@
   background: v.$color-surface-muted;
   font-size: v.$font-sm;
   overflow-wrap: anywhere;
+
+  // На узком экране пара не помещается в строку — кладём перевод под слово.
+  @include m.mobile {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 .original {
@@ -27,6 +39,16 @@
 
 .separator {
   color: v.$color-text-muted;
+
+  @include m.mobile {
+    display: none;
+  }
+}
+
+.translation {
+  @include m.mobile {
+    color: v.$color-text-muted;
+  }
 }
 
 .empty {

@@ -16,6 +16,8 @@
   line-height: 1.4;
   transition: background v.$transition, border-color v.$transition, transform v.$transition;
 
+  @include m.touch-target;
+
   &:active:not(:disabled) {
     transform: translateY(1px);
   }
@@ -79,6 +81,11 @@
 .sizeLg {
   padding: v.$space-md v.$space-xl;
   font-size: v.$font-lg;
+
+  @include m.mobile {
+    padding: v.$space-sm v.$space-lg;
+    font-size: v.$font-md;
+  }
 }
 
 .sizeCircle {
@@ -87,6 +94,12 @@
   padding: 0;
   border-radius: 50%;
   font-size: v.$font-xl;
+
+  @include m.mobile {
+    width: 56px;
+    height: 56px;
+    font-size: v.$font-lg;
+  }
 }
 
 .fullWidth {

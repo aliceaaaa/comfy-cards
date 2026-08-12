@@ -32,6 +32,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: v.$space-sm;
+
+  // На телефоне «Учить» на всю ширину, остальное — двумя колонками под ней.
+  @include m.mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    > :first-child {
+      grid-column: 1 / -1;
+    }
+  }
 }
 
 .empty {

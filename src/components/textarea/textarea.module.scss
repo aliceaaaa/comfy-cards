@@ -5,4 +5,10 @@
 
   min-height: 180px;
   resize: vertical;
+
+  // На телефоне атрибут rows делает поле слишком высоким — ограничиваем.
+  @include m.mobile {
+    min-height: 0;
+    height: 160px;
+  }
 }

@@ -8,6 +8,11 @@
   width: 100%;
   height: 260px;
   perspective: 1200px;
+  touch-action: manipulation;
+
+  @include m.mobile {
+    height: 220px;
+  }
 }
 
 .inner {
@@ -48,6 +53,10 @@
   font-size: v.$font-xl;
   font-weight: 700;
   overflow-wrap: anywhere;
+
+  @include m.mobile {
+    font-size: v.$font-lg;
+  }
 }
 
 .caption {

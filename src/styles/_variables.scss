@@ -33,3 +33,6 @@ $shadow-md: 0 6px 20px rgba(47, 43, 38, 0.1);
 
 $content-width: 720px;
 $transition: 0.18s ease;
+
+// Одна точка перелома: до неё — телефон, после — всё остальное.
+$breakpoint-mobile: 600px;

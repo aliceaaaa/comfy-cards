@@ -7,6 +7,10 @@
 
   padding: v.$space-lg;
   border-radius: v.$radius-lg;
+
+  @include m.mobile {
+    padding: v.$space-md;
+  }
 }
 
 .title {

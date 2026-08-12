@@ -15,9 +15,19 @@ body {
   background: v.$color-bg;
   color: v.$color-text;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  // 16px — минимум, при котором iOS не зумит страницу на фокусе поля.
   font-size: v.$font-md;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  // Ландшафтная ориентация не должна раздувать шрифт.
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1,

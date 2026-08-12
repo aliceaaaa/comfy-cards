@@ -8,6 +8,14 @@
   max-width: v.$content-width;
   margin: 0 auto;
   padding: v.$space-xl v.$space-md;
+
+  @include m.mobile {
+    gap: v.$space-md;
+    // Учитываем «чёлку» и домашнюю полоску на iPhone.
+    padding: v.$space-md calc(#{v.$space-md} + env(safe-area-inset-left))
+      calc(#{v.$space-xl} + env(safe-area-inset-bottom))
+      calc(#{v.$space-md} + env(safe-area-inset-right));
+  }
 }
 
 .header {
@@ -28,6 +36,11 @@
 .title {
   font-size: v.$font-xl;
   font-weight: 700;
+  overflow-wrap: anywhere;
+
+  @include m.mobile {
+    font-size: v.$font-lg;
+  }
 }
 
 .subtitle {

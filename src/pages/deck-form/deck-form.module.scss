@@ -1,11 +1,12 @@
 @use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
 
 .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: v.$space-md;
 
-  @media (max-width: 640px) {
+  @include m.mobile {
     grid-template-columns: 1fr;
   }
 }
@@ -21,8 +22,5 @@
 }
 
 .actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: v.$space-sm;
+  @include m.action-row;
 }

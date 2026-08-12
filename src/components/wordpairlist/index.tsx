@@ -20,7 +20,7 @@ export const WordPairList = ({
         <li key={card.id} className={styles.item}>
           <span className={styles.original}>{card.original}</span>
           <span className={styles.separator}>—</span>
-          <span>{card.translation}</span>
+          <span className={styles.translation}>{card.translation}</span>
         </li>
       ))}
     </ul>
